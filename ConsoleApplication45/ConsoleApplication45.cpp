@@ -2,11 +2,44 @@
 //
 
 #include <iostream>
+#include "Car.h"	
 using namespace std;	
 
-int main()
+int main()	
 {
-  
+	int choise;	
+	Car a("Audi A5", "Red,", 2021, 25000);	
+	a.GetModel();	
+	a.Print();	
+	cout << "How do you want to change the value? " << endl;	
+	cout << "1 - Enter manually " << endl;	
+	cout << "2 - Default " << endl;	
+	cin >> choise;	
+	switch (choise) 
+	{
+	case 1:	
+		a.input();	
+		a.Print();	
+		break;
+	case 2:
+		a.SetModel("Tesla Model X");	
+		char* model = a.GetModel();	
+		cout << "Model: " << model << endl;	
+
+		a.SetColor("White");
+		char* color = a.GetColor();	
+		cout << "Color: " << color << endl;	
+
+		a.SetYear(2012);
+		int year = a.GetYear();
+		cout << "Year: " << year << endl;	
+
+		a.SetPrice(94.990);
+		double price = a.GetPrice();
+		cout << "Price: " << price << "$" << endl;
+		a.Print();	
+		break;	
+	}	
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
